@@ -40,7 +40,7 @@
 ## インストール
 ```
 cd ~/ros2_ws/src
-git clone https://github.com/cit22ros2/crane_x7_simple_examples.git](https://github.com/akajaika/Hand_Tracking
+git clone https://github.com/akajaika/Hand_Tracking
 ```
 ## ビルド 
 ```
