@@ -1,1 +1,41 @@
-# robotdesign3_2024
+# Hand_Tracking
+このパッケージは、ハンドトラッキングでロボットアーム（CRANE-X7）を動かすことができるros2パッケージです。
+
+## このパッケージを使う前に
+### ros　2及びCRANE-X7セットアップ
+  この資料はUbuntu 22.04 LTSを元に書いています.   
+  * ROS 2インストール  
+　　上田先生の[動画](https://youtu.be/mBhtD08f5KY)及び[インストールスクリプト](https://github.com/ryuichiueda/ros2_setup_scripts)を参照し, インストールを行ってください.   
+  * CRANE-X7及び関連パッケージのインストール  
+　　[RT社公式リポジトリ](https://github.com/rt-net/crane_x7_ros/tree/ros2)よりインストールできます. 以下にインストールコマンドを載せます.   
+    ```
+    # Setup ROS environment
+    $ source /opt/ros/humble/setup.bash
+
+    # Download crane_x7 repositories
+    $ mkdir -p ~/ros2_ws/src
+    $ cd ~/ros2_ws/src
+    $ git clone -b ros2 https://github.com/rt-net/crane_x7_ros.git
+    $ git clone -b ros2 https://github.com/rt-net/crane_x7_description.git
+
+    # Install dependencies
+    $ rosdep install -r -y -i --from-paths .
+
+    # Build & Install
+    $ cd ~/ros2_ws
+    $ colcon build --symlink-install
+    $ source ~/ros2_ws/install/setup.bash
+    ```
+    （[https://github.com/rt-net/crane_x7_ros/tree/ros2/README.md](https://github.com/rt-net/crane_x7_ros/tree/ros2/README.md)より転載）  
+    (#の行はコメント, $の行はshellのコマンドです)  
+    また, インストールが完了したらパッケージに含まれるサンプルコードをシミュレータ（Gazebo）で試すことができます. 詳しくは
+    [こちら](https://github.com/rt-net/crane_x7_ros/tree/ros2/crane_x7_examples)を参照してください.
+
+    crane_x7_controlの[README](https://github.com/rt-net/crane_x7_ros/blob/ros2/crane_x7_control/README.md)に詳しく書いてあります.
+
+# このパッケージの使い方
+## インストール
+```
+$ cd ~/ros2_ws/src
+$ git clone https://github.com/cit22ros2/crane_x7_simple_examples.git 
+```
